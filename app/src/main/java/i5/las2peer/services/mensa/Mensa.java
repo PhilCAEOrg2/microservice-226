@@ -84,6 +84,59 @@ public class Mensa extends RESTService {
 
       /**
    * 
+   * getDishRating
+   *
+   * 
+   * @param id  a String
+   * 
+   * @return Response 
+   * 
+   */
+  @GET
+  @Path("/dishes/{id}/ratings")
+  @Produces(MediaType.APPLICATION_JSON)
+  @Consumes(MediaType.TEXT_PLAIN)
+  @ApiResponses(value = {
+       @ApiResponse(code = HttpURLConnection.HTTP_OK, message = "resok"),
+       @ApiResponse(code = HttpURLConnection.HTTP_NOT_FOUND, message = "resnf")
+  })
+  @ApiOperation(value = "getDishRating", notes = " ")
+  public Response getDishRating(@PathParam("id") String id) {
+
+
+
+
+     
+    // service method invocations
+
+     
+
+
+
+
+    // resok
+    boolean resok_condition = true;
+    if(resok_condition) {
+      JSONObject ok = new JSONObject();
+
+      
+
+      return Response.status(HttpURLConnection.HTTP_OK).entity(ok.toJSONString()).build();
+    }
+    // resnf
+    boolean resnf_condition = true;
+    if(resnf_condition) {
+      JSONObject resnf = new JSONObject();
+
+      
+
+      return Response.status(HttpURLConnection.HTTP_NOT_FOUND).entity(resnf.toJSONString()).build();
+    }
+    return null;
+  }
+
+  /**
+   * 
    * getDishes
    *
    * 
